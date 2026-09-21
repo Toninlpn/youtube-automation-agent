@@ -25,7 +25,12 @@ Les fichiers sont versionnés sur la branche `arena/01a0c5c6-youtube-automation-
 | **Master 1080p** (à uploader sur YouTube) | 54 Mo | [telecharger](https://raw.githubusercontent.com/Toninlpn/youtube-automation-agent/arena/01a0c5c6-youtube-automation-agent/examples/short-sous-le-lit/short-sous-le-lit-9x16.mp4) |
 | Web 1080p (streaming) | 11 Mo | [telecharger](https://raw.githubusercontent.com/Toninlpn/youtube-automation-agent/arena/01a0c5c6-youtube-automation-agent/examples/short-sous-le-lit/short-sous-le-lit-web.mp4) |
 | Mobile 720p | 3,9 Mo | [telecharger](https://raw.githubusercontent.com/Toninlpn/youtube-automation-agent/arena/01a0c5c6-youtube-automation-agent/examples/short-sous-le-lit/short-sous-le-lit-720p.mp4) |
+| Aperçu 480p (lecture rapide) | 1,7 Mo | [telecharger](https://raw.githubusercontent.com/Toninlpn/youtube-automation-agent/arena/01a0c5c6-youtube-automation-agent/examples/short-sous-le-lit/short-sous-le-lit-preview-480p.mp4) |
 | Sous-titres FR | 1 Ko | [telecharger](https://raw.githubusercontent.com/Toninlpn/youtube-automation-agent/arena/01a0c5c6-youtube-automation-agent/examples/short-sous-le-lit/short-sous-le-lit-fr.srt) |
+
+> ⚠️ GitHub ne lit pas les vidéos dans son interface (elles ne sont que téléchargeables). Pour **regarder**
+> le Short sans rien télécharger, ouvre la preview du sandbox (`Lecteur + téléchargement du Short`) ou
+> importe le MP4 dans ton lecteur vidéo après téléchargement.
 
 Dossier complet : [examples/short-sous-le-lit](https://github.com/Toninlpn/youtube-automation-agent/tree/arena/01a0c5c6-youtube-automation-agent/examples/short-sous-le-lit)
 
