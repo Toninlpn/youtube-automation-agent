@@ -13,6 +13,24 @@ function cleanText(value) {
   return removeControlCharacters(value, ' ').replace(/\s+/g, ' ').trim();
 }
 
+// Descriptions keep their line breaks: chapters, links and hashtags are line-based
+// on YouTube. Only line trailing whitespace and excessive blank lines are removed.
+function cleanDescription(value) {
+  return Array.from(String(value ?? ''))
+    .map(character => {
+      const code = character.charCodeAt(0);
+      if (character === '\n' || character === '\r') return character;
+      return code <= 31 || code === 127 ? ' ' : character;
+    })
+    .join('')
+    .replace(/\r\n?/g, '\n')
+    .split('\n')
+    .map(line => line.replace(/[ \t]+$/, ''))
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
 function normalizeTags(input) {
   const values = Array.isArray(input) ? input : String(input || '').split(',');
   const unique = [];
@@ -37,7 +55,9 @@ function normalizeYouTubeMetadata(metadata = {}) {
   const snippet = metadata.snippet || metadata.seo || metadata;
   return {
     title: cleanText(snippet.title).slice(0, MAX_TITLE_LENGTH),
-    description: removeControlCharacters(snippet.description).slice(0, MAX_DESCRIPTION_LENGTH).trim(),
+    description: cleanDescription(snippet.description)
+      .slice(0, MAX_DESCRIPTION_LENGTH)
+      .replace(/\s+$/, ''),
     tags: normalizeTags(snippet.tags),
     categoryId: String(snippet.categoryId ?? snippet.metadata?.category ?? '22').trim(),
     defaultLanguage: String(snippet.defaultLanguage ?? snippet.metadata?.language ?? 'en').trim(),
