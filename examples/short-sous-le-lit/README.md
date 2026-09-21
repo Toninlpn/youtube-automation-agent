@@ -16,6 +16,19 @@ Short vertical français de **44,8 secondes**, histoire originale, voix off grav
 | `description.txt` | Description YouTube prête à coller |
 | `metadata.json` / `metadata.md` | Titre, description, tags validés par le validateur d'AgentTube |
 
+## ⬇️ Télécharger
+
+Les fichiers sont versionnés sur la branche `arena/01a0c5c6-youtube-automation-agent`.
+
+| Fichier | Poids | Lien de téléchargement direct |
+|---|---|---|
+| **Master 1080p** (à uploader sur YouTube) | 54 Mo | [telecharger](https://raw.githubusercontent.com/Toninlpn/youtube-automation-agent/arena/01a0c5c6-youtube-automation-agent/examples/short-sous-le-lit/short-sous-le-lit-9x16.mp4) |
+| Web 1080p (streaming) | 11 Mo | [telecharger](https://raw.githubusercontent.com/Toninlpn/youtube-automation-agent/arena/01a0c5c6-youtube-automation-agent/examples/short-sous-le-lit/short-sous-le-lit-web.mp4) |
+| Mobile 720p | 3,9 Mo | [telecharger](https://raw.githubusercontent.com/Toninlpn/youtube-automation-agent/arena/01a0c5c6-youtube-automation-agent/examples/short-sous-le-lit/short-sous-le-lit-720p.mp4) |
+| Sous-titres FR | 1 Ko | [telecharger](https://raw.githubusercontent.com/Toninlpn/youtube-automation-agent/arena/01a0c5c6-youtube-automation-agent/examples/short-sous-le-lit/short-sous-le-lit-fr.srt) |
+
+Dossier complet : [examples/short-sous-le-lit](https://github.com/Toninlpn/youtube-automation-agent/tree/arena/01a0c5c6-youtube-automation-agent/examples/short-sous-le-lit)
+
 ## 📖 L'histoire (thème « frisson + twist émotionnel »)
 
 > « Je n'ai jamais eu qu'une seule règle dans la vie : ne jamais regarder sous le lit de ma chambre d'enfance. Ma mère me l'a répété jusqu'à sa mort. Alors quand j'ai dû vider la maison, seul, une lampe torche à la main, ma main tremblait. J'ai éclairé sous le lit. Rien du tout. Juste une boîte en bois : des lettres, une montre, et une photo de mon père. Première ligne : *Pardon, je n'ai jamais su revenir.* Ma mère ne cachait pas un monstre. Elle protégeait son amour. Et vous, qu'est-ce qui dort sous votre lit ? »
