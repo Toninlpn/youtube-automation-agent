@@ -39,4 +39,6 @@ The preferred launch gallery contains three materially different niches and pres
 - Final video URL: assets de la release `short-sous-le-lit` de ce dépôt
 - Verification: MP4 décodé intégralement sans erreur (`ffmpeg -v error -f null -`), 1080x1920, 30 fps, 44,8 s, H.264 + AAC 48 kHz, loudness -14,4 LUFS / true peak -1,5 dBFS, métadonnées validées par `utils/youtube-metadata-validator.js`
 
-Le master 1080p (~10 Mbps) n'est pas versionné dans git : il est attaché aux assets de la release pour éviter d'alourdir l'historique. Les versions web 1080p et mobile 720p sont dans `examples/short-sous-le-lit/`.
+Les trois rendus sont versionnés dans `examples/short-sous-le-lit/` : master 1080p (~10 Mbps, pour l'upload YouTube),
+web 1080p allégé (streaming) et mobile 720p. Le retraitement complet se rejoue avec
+`data/scripts/short-01/build.py` (variables `VO_PREFIX`, `VO_FX`, `SHORT_TMP`).
