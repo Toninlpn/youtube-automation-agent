@@ -1,0 +1,45 @@
+{
+  "title": "Son reflet avait 2 secondes de retard… 😳 #shorts",
+  "description": "Un soir, dans une salle de bains, un homme lève la main. Son reflet ne bouge pas.\nPuis il prend l'habitude d'avoir deux secondes de retard.\nPuis il commence à sourire tout seul.\nPuis il désigne quelque chose derrière lui.\n\nCourt-métrage d'horreur psychologique — 40 secondes, sous-titres inclus, aucun son sous droits.\nUne question reste ouverte : qui des deux imitait l'autre ?\n\n⏱ Chapitres\n0:00 Le reflet immobile\n0:05 Deux secondes de retard\n0:11 Ce qu'il ne faisait pas\n0:17 Collé contre le verre\n0:24 Il désigne derrière lui\n0:30 Plus aucun reflet\n0:35 « Maintenant, c'est mon tour »\n\n#shorts #horreur #courtmétrage #mystère #histoirecourte",
+  "tags": [
+    "shorts horreur",
+    "court métrage horreur",
+    "horreur psychologique",
+    "miroir hanté",
+    "reflet bizarre",
+    "histoire courte française",
+    "creepypasta français",
+    "thread horreur",
+    "suspense",
+    "twist final",
+    "narration française",
+    "mystère sans réponse"
+  ],
+  "categoryId": "24",
+  "defaultLanguage": "fr",
+  "defaultAudioLanguage": "fr",
+  "durationSeconds": 39.97,
+  "resolution": "1080x1920",
+  "aspectRatio": "9:16",
+  "fps": 30,
+  "captionsFile": "out/le-reflet-fr.srt",
+  "burnedInCaptions": true,
+  "madeForKids": false,
+  "selfDeclaredMadeForKids": false,
+  "audioSource": "synthetise (ffmpeg aevalsrc/anoisesrc) — aucune musique sous droits",
+  "voice": {
+    "provider": "arena-tts",
+    "language": "fr",
+    "gender": "masculine",
+    "ageRange": "20-30",
+    "arc": "calme -> inquiet -> terrifie"
+  },
+  "visualProvider": "generate_image (images fixes) + mouvements de camera ffmpeg (zoompan)",
+  "rightsConfirmed": true,
+  "loopFriendly": true,
+  "sceneCount": 20,
+  "integration": {
+    "pipeline": "rendu local (render.py), pas de credits video payants",
+    "publishGate": "revision humaine requise avant publication"
+  }
+}
