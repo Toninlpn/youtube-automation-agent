@@ -100,7 +100,7 @@ VO = [
     dict(f="vo_s3.wav", t=10.80, style="VO", text="Puis son reflet a commencé à faire des choses… qu'il ne faisait pas.", hi=["des choses"]),
     dict(f="vo_s4.wav", t=17.00, style="VO", text="Et là… il a compris qu'il n'était pas en train de regarder son reflet.", hi=["pas en train"]),
     dict(f="vo_s5.wav", t=24.30, style="VO", text="Il lui montrait quelque chose… derrière lui.", hi=["derrière lui"]),
-    dict(f="vo_s6a.wav", t=32.05, style="WH", gain=1.38, whisper=True, text="Maintenant… c'est mon tour.", hi=["mon tour"]),
+    # vo_s6a (Maintenant… c'est mon tour.) retire a la demande : percu comme "c'est de retour" a cause du traitement chuchote
     dict(f="vo_s6b.wav", t=35.35, style="VO", gain=1.16, text="Et quand la lumière s'est rallumée… il n'était plus là.", hi=["plus là"]),
 ]
 
