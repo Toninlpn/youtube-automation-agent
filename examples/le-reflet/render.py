@@ -104,8 +104,38 @@ VO = [
     dict(f="vo_s6b.wav", t=35.35, style="VO", gain=1.16, text="Et quand la lumière s'est rallumée… il n'était plus là.", hi=["plus là"]),
 ]
 
+def vo_src(v):
+    """Prise nettoyyee si elle existe, sinon prise brute."""
+    c = os.path.join(TMP, "clean", v["f"])
+    return c if os.path.exists(c) else os.path.join(AUD, v["f"])
+
+def first_speech_offset(path, thresh="-30dB"):
+    """Instant du premier mot : tout ce qui precede est souffle/marmonnement."""
+    p = subprocess.run([FFMPEG, "-hide_banner", "-i", path, "-af",
+                        f"silencedetect=n={thresh}:d=0.10", "-f", "null", "-"],
+                       capture_output=True, text=True)
+    m = re.search(r"silence_end:\s*([\d.]+)", p.stderr)
+    return max(0.0, float(m.group(1)) - 0.05) if m else 0.0
+
+def clean_takes():
+    d = os.path.join(TMP, "clean")
+    os.makedirs(d, exist_ok=True)
+    for v in VO:
+        dst = os.path.join(d, v["f"])
+        if os.path.exists(dst) and os.environ.get("FORCE") != "1":
+            continue
+        off = first_speech_offset(os.path.join(AUD, v["f"]))
+        src = os.path.join(AUD, v["f"])
+        pre = max(off, 0.20)                      # on rogne aussi un eventuel murmure audible
+        run(["-ss", f"{pre:.3f}", "-i", src, "-af",
+             f"highpass=f=95,afftdn=nr=14:nf=-34,afade=t=in:st=0:d=0.06,"
+             f"aformat=sample_rates={SR}:channel_layouts=mono",
+             "-ar", str(SR), "-c:a", "pcm_s16le", dst], "clean " + v["f"])
+        v["t"] = round(v["t"] + pre - 0.18, 3)   # le sous-titre precede la 1re syllabe de ~50 ms    # on garde le meme instant de premiere syllabe
+        print(f"  nettoye {v['f']} : -{pre:.2f}s de pre-roll, pose a {v['t']:.2f}s")
+
 def vo_windows():
-    return [(v["t"], v["t"] + dur_of(os.path.join(AUD, v["f"]))) for v in VO]
+    return [(v["t"], v["t"] + dur_of(vo_src(v))) for v in VO]
 
 # ------------------------------------------------------------ sous-titres
 HL = re.compile(r"\{\\c(&H[0-9A-Fa-f]+&)?\}")
@@ -133,7 +163,7 @@ def split_lines(text, maxc=26):
 def build_cues():
     cues = []
     for v in VO:
-        d = dur_of(os.path.join(AUD, v["f"]))
+        d = dur_of(vo_src(v))
         lines = split_lines(v["text"]); wts = [len(l) for l in lines]
         t = v["t"]
         for ln, wt in zip(lines, wts):
@@ -265,9 +295,9 @@ def render_stems():
                 f"+{amp}*sin(2*PI*{f-9}*t)*exp(-{float(dec)+6:g}*mod(t+{per}-0.19\\,{per})):d={TOTAL},"
                 f"lowpass=f=190,volume={g},{vol(win(w0, w1))}")
 
-    lav_out("room.wav",   "anoisesrc=color=brown:amplitude=0.05:seed=7,lowpass=f=430,volume=0.95")
-    lav_out("buzz.wav",   f"aevalsrc=0.055*sin(2*PI*100*t)*(0.7+0.3*sin(2*PI*0.7*t))*"
-                          f"(1-0.9*{win(34.4,40)}):d={TOTAL},highpass=f=60,lowpass=f=950")
+    lav_out("room.wav",   "anoisesrc=color=brown:amplitude=0.05:seed=7,highpass=f=55,lowpass=f=400,volume=0.8")
+    lav_out("buzz.wav",   f"aevalsrc=0.026*sin(2*PI*100*t)*(0.92+0.08*sin(2*PI*0.23*t))*"
+                          f"min(1\,t/1.4)*(1-0.9*{win(34.4,40)}):d={TOTAL},lowpass=f=260")
     lav_out("drone.wav",  f"aevalsrc=0.55*sin(2*PI*37*t)*(0.55+0.45*sin(2*PI*0.06*t))*"
                           f"pow(t/{TOTAL}\\,1.4):d={TOTAL},lowpass=f=130")
     lav_out("tick.wav",   f"aevalsrc=0.55*sin(2*PI*2300*t)*exp(-85*mod(t\\,0.5)):d={TOTAL},"
@@ -303,14 +333,14 @@ def render_stems():
     for i, v in enumerate(VO):
         if v.get("whisper"):
             head = f"[0:a]asetrate={SR}*0.86,aresample={SR},atempo=1.14,highpass=f=90,"
-            echo = "aecho=0.85:0.42:56|112:0.42|0.26,"
+            echo = "aecho=0.8:0.3:48|96:0.28|0.14,"
         else:
             head = "[0:a]highpass=f=85,"
-            echo = "aecho=0.7:0.2:33|69:0.2|0.1,"
-        graph = (head + f"equalizer=f=2700:t=q:w=1.4:g=2.4,volume={v.get('gain',1.0):.2f}," + echo +
+            echo = "aecho=0.6:0.14:26|52:0.11|0.04,"
+        graph = (head + f"afftdn=nr=12:nf=-32,equalizer=f=2700:t=q:w=1.4:g=2.0,volume={v.get('gain',1.0):.2f}," + echo +
                  f"adelay={int(round(v['t']*1000))}:all=1,"
                  f"aformat=sample_rates={SR}:channel_layouts=stereo,apad,atrim=0:{TOTAL}[out]")
-        run(["-i", os.path.join(AUD, v["f"]), "-filter_complex", graph, "-map", "[out]",
+        run(["-i", vo_src(v), "-filter_complex", graph, "-map", "[out]",
              "-ar", str(SR), "-ac", "2", "-c:a", "pcm_s16le",
              os.path.join(TMP, f"vo_{i}.wav")], f"vo {i}")
 
@@ -344,6 +374,18 @@ GRADE = ",".join([
     dip(20.33, 20.41, 1.0),    # boom grave + retournement vers le miroir
 ]) + ","
 
+def mux_only():
+    final = os.path.join(OUT, f"{SLUG}-9x16.mp4")
+    run(["-i", os.path.join(TMP, "video.mp4"), "-i", os.path.join(TMP, "ambience.wav"),
+         "-i", os.path.join(TMP, "vo_mix.wav"), "-filter_complex",
+         "[1:a][2:a]amix=inputs=2:normalize=0:duration=longest,atrim=0:" + str(TOTAL) +
+         ",alimiter=limit=0.92,loudnorm=I=-14:TP=-1.5:LRA=10[a]",
+         "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+         "-ar", "44100", "-ac", "2", "-movflags", "+faststart", "-shortest", final], "mux")
+    print("OK ->", final, round(dur_of(final), 2), "s",
+          round(os.path.getsize(final) / 1e6, 1), "Mo")
+    return final
+
 def render_video():
     run(["-f", "concat", "-safe", "0", "-i", os.path.join(TMP, "seglist.txt"),
          "-vf", GRADE, "-r", str(FPS), "-c:v", "libx264", "-preset", "medium", "-crf", "22",
@@ -367,9 +409,11 @@ if __name__ == "__main__":
     if mode in ("subs", "all"):
         print("cues:", write_subs(cues))
     if mode in ("audio", "all"):
-        render_stems()
+        clean_takes(); render_stems()
+    if mode == "mux":
+        mux_only()
     if mode in ("video", "all"):
-        write_subs(cues); render_segments(); render_stems(); render_video()
+        write_subs(cues); clean_takes(); render_segments(); render_stems(); render_video()
     if mode == "cues":
         print(json.dumps([{"in": round(c["start"], 2), "out": round(c["end"], 2), "x": c["text"]}
                           for c in cues], ensure_ascii=False, indent=1))
