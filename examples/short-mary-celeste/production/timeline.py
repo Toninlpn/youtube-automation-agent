@@ -16,7 +16,7 @@ W, H = 1080, 1920
 
 # Vitesse de la voix off : pitch -4,8 % (voix plus grave) + acceleration nette x1,03
 PITCH_RATE = 1.05
-ATEMPO = PITCH_RATE / 1.03
+NET_TEMPO = 1.03   # vitesse nette de la narration
 
 VOICEOVER = [
     ("vo1", "Imaginez d\u00e9couvrir un bateau en pleine mer\u2026 mais sans aucun membre d'\u00e9quipage."),

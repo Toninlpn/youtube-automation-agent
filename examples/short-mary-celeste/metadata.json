@@ -30,7 +30,7 @@
   },
   "voix": {
     "type": "homme français, 18-30 ans, grave et naturelle",
-    "traitement": "pitch -5 %, EQ (+3 dB @110 Hz, -2,5 dB @3,4 kHz), compression 3:1, reverb courte"
+    "traitement": "pitch -5 %% (rubberband), tempo x1,03, EQ (+2,5 dB @110 Hz, -2 dB @3,4 kHz), compression 2,5:1"
   },
   "design_sonore": [
     "impact basse à l'accroche (0:00) et à la révélation finale (0:47)",

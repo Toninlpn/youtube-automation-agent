@@ -69,7 +69,7 @@ def add_bass_impact(buf, t0, gain=1.0):
     f = 140 * np.exp(-tt / 0.16) + 36
     phase = 2 * np.pi * np.cumsum(f) / SR
     body = np.sin(phase) * np.exp(-tt / 0.42)
-    click = fft_lp(white(n, 7), 9000) * np.exp(-tt / 0.012) * 1.4
+    click = fft_lp(white(n, 7), 1200) * np.exp(-tt / 0.020) * 0.9
     sig = (body * 0.9 + click * 0.35) * gain
     i0 = int(t0 * SR)
     buf[i0:i0 + n, :] += np.stack([sig, sig * 0.98], axis=1)
@@ -118,10 +118,10 @@ def main():
     wind = fft_lp(brown(N, 5), 420)
     wind_env = smooth_env([0, 8, 20, 32, 41, 47, 51.2],
                           [0.35, 0.42, 0.5, 0.95, 0.8, 0.45, 0.3], tau=2.0)
-    buf[:, 0] += wind * wind_env * 0.9
-    buf[:, 1] += np.roll(wind, 137) * wind_env * 0.9
+    buf[:, 0] += wind * wind_env * 0.75
+    buf[:, 1] += np.roll(wind, 137) * wind_env * 0.75
 
-    swell = tv_bp(white(N, 11), 260, 1100)
+    swell = tv_bp(white(N, 11), 200, 850)
     swell_env = (0.55 + 0.45 * np.sin(2 * np.pi * 0.07 * T_AX)
                  + 0.25 * np.sin(2 * np.pi * 0.11 * T_AX + 1.3)
                  + 0.15 * np.sin(2 * np.pi * 0.19 * T_AX + 2.1))
@@ -129,8 +129,8 @@ def main():
     storm = smooth_env([S["storm_boost"][0] - 2, S["storm_boost"][0],
                         S["storm_boost"][1], S["storm_boost"][1] + 2],
                        [1.0, 2.6, 2.6, 1.0], tau=1.5)
-    buf[:, 0] += swell * swell_env * storm * 0.5
-    buf[:, 1] += np.roll(swell, 311) * swell_env * storm * 0.5
+    buf[:, 0] += swell * swell_env * storm * 0.42
+    buf[:, 1] += np.roll(swell, 311) * swell_env * storm * 0.42
 
     r0, r1 = S["riser"]
     n = int((r1 - r0) * SR)
@@ -163,6 +163,15 @@ def main():
     f0, f1 = S["fade_out"]
     ramp = np.clip((f1 - T_AX) / (f1 - f0), 0, 1) ** 1.5
     buf *= ramp[:, None]
+
+    # fondu d'entree (evite tout demarrage brutal) + suppression du continu / sub-harmonique
+    fin = np.clip(T_AX / 0.30, 0, 1) ** 1.5
+    buf *= fin[:, None]
+    buf = fft_lp(buf[:, 0], 16000)[:, None] * 0 + buf
+    # highpass simple par retrait de la moyenne glissante tres basse
+    k = np.ones(int(0.05 * SR)) / int(0.05 * SR)
+    slow = np.stack([np.convolve(buf[:, c], k, mode="same") for c in range(2)], axis=1)
+    buf = buf - 0.85 * slow
 
     buf *= 0.72 / (np.abs(buf).max() + 1e-9)
 

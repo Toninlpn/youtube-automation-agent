@@ -14,7 +14,7 @@ mary celeste, mystère, histoire vraie, bateau fantôme, shorts français, histo
 - Langue : fr / audio : fr
 - Format : **1080 × 1920 (9:16), 30 fps, 50,6 s**, H.264 High ~10 Mbps + AAC 192 kbps
 - Loudness : **-14,1 LUFS** intégré, true peak **-1,0 dBFS** (norme YouTube)
-- Voix : narration masculine française, pitch -5 %, EQ +3 dB @110 Hz / -2,5 dB @3,4 kHz, compression, reverb courte
+- Voix : narration masculine française, pitch -5 % (rubberband), tempo x1,03, EQ +2,5 dB @110 Hz / -2 dB @3,4 kHz, compression 2,5:1
 - Sous-titres : gras 62 px synchronisés, mots clés en doré, accroche et question finale en plein écran
 - Public : non destiné aux enfants
 

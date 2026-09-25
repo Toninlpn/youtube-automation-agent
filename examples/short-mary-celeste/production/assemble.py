@@ -220,11 +220,12 @@ def build_voice():
         inputs += ["-i", os.path.join(T.AUDIO, name + ".mp3")]
         ms = int(round(wins[name][0] * 1000))
         lines.append(
-            "[%d:a]aresample=48000,asetrate=%.0f,aresample=48000,atempo=%.4f,"
-            "highpass=f=85,equalizer=f=110:t=q:w=1.2:g=3,equalizer=f=3400:t=q:w=2:g=-2.5,"
-            "acompressor=threshold=-19dB:ratio=3:attack=8:release=180:makeup=2,"
-            "aecho=0.8:0.5:30:0.2,pan=stereo|c0=c0|c1=c0,adelay=%d|%d[v%d]"
-            % (i, 48000 * T.PITCH_RATE, T.ATEMPO, ms, ms, i))
+            "[%d:a]aresample=48000,"
+            "rubberband=pitch=%.4f:tempo=%.4f,"
+            "highpass=f=90,equalizer=f=110:t=q:w=1.2:g=2.5,equalizer=f=3400:t=q:w=2:g=-2,"
+            "acompressor=threshold=-18dB:ratio=2.5:attack=10:release=200:makeup=1.5,"
+            "pan=stereo|c0=c0|c1=c0,adelay=%d|%d[v%d]"
+            % (i, 1.0 / T.PITCH_RATE, T.NET_TEMPO, ms, ms, i))
     lines.append("[v0][v1][v2][v3][v4][v5]amix=inputs=6:normalize=0:duration=longest,"
                  "atrim=0:%.2f,asetpts=N/SR/TB,"
                  "aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo[vout]"
