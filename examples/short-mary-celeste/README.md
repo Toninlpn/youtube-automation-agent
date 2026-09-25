@@ -33,6 +33,7 @@ l'affaire du *Mary Celeste* (1872), racontée comme un **mystère historique non
 - **Vidéo** : 1080 × 1920 (9:16), 30 fps, H.264 High, ~10 Mbps, `+faststart`
 - **Audio** : AAC 192 kbps, 48 kHz stéréo — **-14,1 LUFS** intégré, true peak **-1,0 dBFS**
 - **Voix off** : masculine française, pitch -5 %, EQ, compression, reverb courte, rythme accéléré ×1,03
+- **Musique** : partition originale composée pour le Short — La mineur, 75 BPM, 16 accords (Am–F–C–G), nappe stéréo, sub, pulsation cardiaque, couche de tension, arpège pendant la tempête, motif piano repris à l'ouverture et à la finale, accord de résolution sur la question finale (mixée ~9 dB sous la voix)
 - **Design sonore** : impact basse à l'accroche et à la révélation, tonnerre, houle, vent, grincements du bois, montée de tension (riser)
 - **Étalonnage** : contraste +6 %, saturation -22 %, balance vers le bleu, vignettage, grain léger
 - **Sous-titres** : gras 62 px, mots clés en doré, fondus d'apparition
@@ -44,7 +45,9 @@ Tout est reproductible depuis `production/` :
 ```bash
 cd examples/short-mary-celeste/production
 python3 render_texts.py   # calques de texte (PIL)
-python3 build_bed.py      # design sonore (numpy -> bed.wav)
+python3 build_bed.py      # ambiances (numpy -> bed.wav)
+python3 build_music.py    # musique originale (numpy -> music.wav)
+python3 add_music.py      # mix voix+musique+ambiances et remux
 python3 assemble.py       # plans Ken Burns, dissolves, étalonnage, mix, rendu final
 ```
 

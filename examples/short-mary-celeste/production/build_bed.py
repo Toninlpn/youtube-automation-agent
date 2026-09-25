@@ -112,8 +112,8 @@ def main():
     drone *= 1 + 0.12 * np.sin(2 * np.pi * 0.35 * T_AX)
     build = smooth_env([0, 6, 24, 32, 41, 47.3, 49.8, 51.2],
                        [0.55, 0.62, 0.72, 0.80, 1.0, 1.15, 0.7, 0.0], tau=1.2)
-    buf[:, 0] += drone * build
-    buf[:, 1] += np.concatenate([np.zeros(int(0.008 * SR)), drone])[:N] * build
+    buf[:, 0] += drone * build * 0.38
+    buf[:, 1] += np.concatenate([np.zeros(int(0.008 * SR)), drone])[:N] * build * 0.38
 
     wind = fft_lp(brown(N, 5), 420)
     wind_env = smooth_env([0, 8, 20, 32, 41, 47, 51.2],

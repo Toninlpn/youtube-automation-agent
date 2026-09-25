@@ -33,10 +33,12 @@
     "traitement": "pitch -5 %% (rubberband), tempo x1,03, EQ (+2,5 dB @110 Hz, -2 dB @3,4 kHz), compression 2,5:1"
   },
   "design_sonore": [
-    "impact basse à l'accroche (0:00) et à la révélation finale (0:47)",
-    "tonnerre lointain pendant la séquence tempête",
-    "houle, vent et grincements du bois",
-    "montée de tension (riser) avant la question finale"
+    "musique originale composee pour le Short : La mineur, 75 BPM, 16 accords (Am-F-C-G)",
+    "nappe d'accords stereo, sub, pulsation cardiaque, couche de tension, arpege pendant la tempete",
+    "motif piano repris a l'ouverture et a la finale, accord de resolution sur la question finale",
+    "impact basse a l'accroche (0:00) et a la revelation finale (0:47)",
+    "tonnerre lointain, houle, vent, grincements du bois",
+    "equilibre : musique environ 9 dB sous la voix off"
   ],
   "sous_titres": "grands caractères gras synchronisés, mots clés en doré",
   "public": "non destiné aux enfants"
