@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le mystère du Mary Celeste — Short 9:16</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0a0d12; color: #e8ecf2; min-height: 100vh;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex; flex-direction: column; align-items: center; padding: 24px 16px 48px;
+  }
+  h1 { font-size: 20px; letter-spacing: .4px; margin-bottom: 4px; text-align: center; }
+  .sub { color: #8b96a8; font-size: 13px; margin-bottom: 20px; text-align: center; }
+  .phone {
+    width: min(420px, 92vw); aspect-ratio: 9/16; background: #000;
+    border-radius: 22px; overflow: hidden; box-shadow: 0 18px 60px rgba(0,0,0,.65);
+    border: 1px solid #1d2531;
+  }
+  video { width: 100%; height: 100%; display: block; background: #000; object-fit: contain; }
+  .bar { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; justify-content: center; }
+  a.btn, button {
+    background: #1b2330; color: #e8ecf2; border: 1px solid #2b3646; border-radius: 10px;
+    padding: 10px 16px; font-size: 14px; text-decoration: none; cursor: pointer;
+  }
+  a.btn:hover, button:hover { background: #243044; }
+  a.primary { background: #ffc63d; color: #14181f; border-color: #ffc63d; font-weight: 600; }
+  a.primary:hover { background: #ffd469; }
+  .meta { margin-top: 26px; font-size: 12.5px; color: #7d8899; text-align: center; line-height: 1.7; max-width: 520px; }
+  .meta b { color: #aab6c6; font-weight: 600; }
+</style>
+</head>
+<body>
+  <h1>🚢 Le mystère du Mary Celeste</h1>
+  <p class="sub">Short vertical 9:16 · 50,6 s · TikTok / YouTube Shorts</p>
+
+  <div class="phone">
+    <video id="v" controls autoplay muted loop playsinline preload="metadata"
+           poster="cover-1080x1920.jpg">
+      <source src="short-mary-celeste-9x16.mp4" type="video/mp4">
+      Votre navigateur ne lit pas ce format.
+    </video>
+  </div>
+
+  <div class="bar">
+    <button onclick="var v=document.getElementById('v'); v.muted=!v.muted;">🔊 Activer / couper le son</button>
+    <a class="primary" href="short-mary-celeste-9x16.mp4" download>⬇️ Télécharger le MP4 (64 Mo)</a>
+    <a class="btn" href="short-mary-celeste-fr.srt" download>⬇️ Sous-titres .srt</a>
+    <a class="btn" href="description.txt" target="_blank">📝 Description</a>
+  </div>
+
+  <p class="meta">
+    <b>1080 × 1920</b> (9:16) · 30 fps · H.264 ~10 Mbps · AAC 192 kbps<br>
+    Loudness <b>-14,1 LUFS</b> · true peak <b>-1,0 dBFS</b> (norme YouTube)<br>
+    Voix off française masculine, sous-titres gras synchronisés (mots clés en doré)<br>
+    Découpage : 00:00 accroche · 00:05 abordage · 00:12 navire intact · 00:24 les disparus · 00:32 tempête · 00:41 question finale
+  </p>
+</body>
+</html>

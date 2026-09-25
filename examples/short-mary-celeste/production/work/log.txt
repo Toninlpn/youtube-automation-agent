@@ -1,0 +1,82 @@
+=== 1/6 plans Ken Burns ===
+>> plan 00 scene1-ocean (2.97s, zoom 1.00->1.35)
+>> plan 01 scene8-waves-hull (2.29s, zoom 1.12->1.30)
+>> plan 02 scene2-lifeboats (3.15s, zoom 1.04->1.20)
+>> plan 03 scene3-deck (2.65s, zoom 1.20->1.18)
+>> plan 04 scene3b-belongings (2.48s, zoom 1.05->1.22)
+>> plan 05 scene4-cargo (2.65s, zoom 1.02->1.18)
+>> plan 06 scene4b-barrels (1.78s, zoom 1.16->1.32)
+>> plan 07 scene4-cargo (2.65s, zoom 1.26->1.10)
+>> plan 08 scene4b-barrels (2.75s, zoom 1.10->1.28)
+>> plan 09 scene3-deck (2.65s, zoom 1.30->1.18)
+>> plan 10 scene5-cabin (2.75s, zoom 1.05->1.20)
+>> plan 11 scene5b-chart (2.48s, zoom 1.10->1.26)
+>> plan 12 scene6-davits (2.75s, zoom 1.15->1.05)
+>> plan 13 scene5-cabin (2.59s, zoom 1.26->1.08)
+>> plan 14 scene8-waves-hull (2.75s, zoom 1.05->1.22)
+>> plan 15 scene8-waves-hull (2.55s, zoom 1.20->1.08)
+>> plan 16 scene1-ocean (2.68s, zoom 1.30->1.12)
+>> plan 17 scene8-waves-hull (2.17s, zoom 1.24->1.08)
+>> plan 18 scene9-sunset (9.90s, zoom 1.32->1.00)
+=== 2/6 transitions + etalonnage ===
+>> segment tete (plan 0, 2.69s)
+>> segment transition 1 (0.22s)
+>> segment corps (plan 1, 1.89s)
+>> segment transition 2 (0.35s)
+>> segment corps (plan 2, 2.62s)
+>> segment transition 3 (0.35s)
+>> segment corps (plan 3, 2.13s)
+>> segment transition 4 (0.35s)
+>> segment corps (plan 4, 2.02s)
+>> segment transition 5 (0.35s)
+>> segment corps (plan 5, 2.13s)
+>> segment transition 6 (0.22s)
+>> segment corps (plan 6, 1.39s)
+>> segment transition 7 (0.35s)
+>> segment corps (plan 7, 2.12s)
+>> segment transition 8 (0.35s)
+>> segment corps (plan 8, 2.23s)
+>> segment transition 9 (0.35s)
+>> segment corps (plan 9, 2.12s)
+>> segment transition 10 (0.35s)
+>> segment corps (plan 10, 2.23s)
+>> segment transition 11 (0.35s)
+>> segment corps (plan 11, 2.02s)
+>> segment transition 12 (0.35s)
+>> segment corps (plan 12, 2.22s)
+>> segment transition 13 (0.22s)
+>> segment corps (plan 13, 2.19s)
+>> segment transition 14 (0.35s)
+>> segment corps (plan 14, 2.22s)
+>> segment transition 15 (0.35s)
+>> segment corps (plan 15, 2.02s)
+>> segment transition 16 (0.35s)
+>> segment corps (plan 16, 2.03s)
+>> segment transition 17 (0.35s)
+>> segment corps (plan 17, 1.82s)
+>> segment transition 18 (0.60s)
+>> segment corps (plan 18, 9.30s)
+>> assemblage 37 segments + etalonnage cine
+=== 3/6 sous-titres ===
+>> tranche 0 (0.0-6.0s, 3 textes)
+>> tranche 1 (6.0-12.0s, 2 textes)
+>> tranche 2 (12.0-18.0s, 3 textes)
+>> tranche 3 (18.0-24.0s, 3 textes)
+>> tranche 4 (24.0-30.0s, 3 textes)
+>> tranche 5 (30.0-36.0s, 2 textes)
+>> tranche 6 (36.0-42.0s, 3 textes)
+>> tranche 7 (42.0-48.0s, 3 textes)
+>> tranche 8 (48.0-50.6s, 1 textes)
+>> assemblage des 9 tranches de sous-titres
+=== 4/6 voix off ===
+>> voix off traitee (pitch -5 %, EQ, comp, reverb)
+=== 5/6 mixage + loudness ===
+>> mixage voix + design sonore
+   loudness mesuree : -20.44 LUFS integres
+>> normalisation -14 LUFS / -1,5 dBTP
+=== 6/6 rendu final ===
+>> rendu final 1080x1920
+>> intermediaires supprimes (589 Mo liberes)
+
+OK -> /home/user/youtube-automation-agent/examples/examples/short-mary-celeste/short-mary-celeste-9x16.mp4
+SRT -> /home/user/youtube-automation-agent/examples/examples/short-mary-celeste/short-mary-celeste-fr.srt

@@ -1,0 +1,43 @@
+{
+  "titre": "Un bateau retrouvé SANS personne à bord 😱 #shorts",
+  "description_fichier": "description.txt",
+  "tags": [
+    "mary celeste",
+    "mystère",
+    "histoire vraie",
+    "bateau fantôme",
+    "shorts français",
+    "histoire courte",
+    "océan atlantique",
+    "1872",
+    "narration française",
+    "frissons",
+    "mystère historique",
+    "youtube shorts"
+  ],
+  "categorie_youtube": 24,
+  "langue": "fr",
+  "format": {
+    "resolution": "1080x1920",
+    "ratio": "9:16",
+    "fps": 30,
+    "duree_s": 50.6,
+    "codec_video": "H.264 High",
+    "debit_video_kbps": 9950,
+    "codec_audio": "AAC-LC 192 kbps 48 kHz stereo",
+    "loudness_lufs": -14.1,
+    "true_peak_dbfs": -1.0
+  },
+  "voix": {
+    "type": "homme français, 18-30 ans, grave et naturelle",
+    "traitement": "pitch -5 %, EQ (+3 dB @110 Hz, -2,5 dB @3,4 kHz), compression 3:1, reverb courte"
+  },
+  "design_sonore": [
+    "impact basse à l'accroche (0:00) et à la révélation finale (0:47)",
+    "tonnerre lointain pendant la séquence tempête",
+    "houle, vent et grincements du bois",
+    "montée de tension (riser) avant la question finale"
+  ],
+  "sous_titres": "grands caractères gras synchronisés, mots clés en doré",
+  "public": "non destiné aux enfants"
+}

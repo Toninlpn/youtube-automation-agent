@@ -1,0 +1,107 @@
+[
+ {
+  "kind": "hook",
+  "file": "/home/user/youtube-automation-agent/examples/short-mary-celeste/production/work/hook.png",
+  "start": 0.0,
+  "end": 3.1,
+  "text": "UN BATEAU A ÉTÉ RETROUVÉ… / SANS PERSONNE À BORD."
+ },
+ {
+  "kind": "cap",
+  "file": "/home/user/youtube-automation-agent/examples/short-mary-celeste/production/work/cap_00.png",
+  "start": 0.5,
+  "end": 4.101,
+  "text": "Imaginez découvrir un bateau en pleine mer…"
+ },
+ {
+  "kind": "cap",
+  "file": "/home/user/youtube-automation-agent/examples/short-mary-celeste/production/work/cap_01.png",
+  "start": 4.101,
+  "end": 6.948,
+  "text": "Mais sans aucun membre d'équipage."
+ },
+ {
+  "kind": "cap",
+  "file": "/home/user/youtube-automation-agent/examples/short-mary-celeste/production/work/cap_02.png",
+  "start": 7.6,
+  "end": 13.001,
+  "text": "En 1872, un navire est retrouvé dérivant dans l'Atlantique."
+ },
+ {
+  "kind": "cap",
+  "file": "/home/user/youtube-automation-agent/examples/short-mary-celeste/production/work/cap_03.png",
+  "start": 13.001,
+  "end": 15.655,
+  "text": "Mais quelque chose ne va pas."
+ },
+ {
+  "kind": "cap",
+  "file": "/home/user/youtube-automation-agent/examples/short-mary-celeste/production/work/cap_04.png",
+  "start": 15.9,
+  "end": 18.995,
+  "text": "Le bateau est encore en état de naviguer."
+ },
+ {
+  "kind": "cap",
+  "file": "/home/user/youtube-automation-agent/examples/short-mary-celeste/production/work/cap_05.png",
+  "start": 18.995,
+  "end": 21.185,
+  "text": "La cargaison est toujours là."
+ },
+ {
+  "kind": "cap",
+  "file": "/home/user/youtube-automation-agent/examples/short-mary-celeste/production/work/cap_06.png",
+  "start": 21.185,
+  "end": 24.356,
+  "text": "Nourriture et eau sont toujours présentes."
+ },
+ {
+  "kind": "cap",
+  "file": "/home/user/youtube-automation-agent/examples/short-mary-celeste/production/work/cap_07.png",
+  "start": 24.6,
+  "end": 28.066,
+  "text": "Mais les dix personnes à bord ont disparu."
+ },
+ {
+  "kind": "cap",
+  "file": "/home/user/youtube-automation-agent/examples/short-mary-celeste/production/work/cap_08.png",
+  "start": 28.066,
+  "end": 31.45,
+  "text": "Leur canot de sauvetage manque également."
+ },
+ {
+  "kind": "cap",
+  "file": "/home/user/youtube-automation-agent/examples/short-mary-celeste/production/work/cap_09.png",
+  "start": 32.0,
+  "end": 36.792,
+  "text": "Personne ne sait exactement pourquoi ils ont quitté le navire."
+ },
+ {
+  "kind": "cap",
+  "file": "/home/user/youtube-automation-agent/examples/short-mary-celeste/production/work/cap_10.png",
+  "start": 36.792,
+  "end": 41.043,
+  "text": "Tempête ? Erreur de jugement ? Peur d'une catastrophe ?"
+ },
+ {
+  "kind": "cap",
+  "file": "/home/user/youtube-automation-agent/examples/short-mary-celeste/production/work/cap_11.png",
+  "start": 41.0,
+  "end": 42.884,
+  "text": "Plus de 150 ans plus tard,"
+ },
+ {
+  "kind": "cap",
+  "file": "/home/user/youtube-automation-agent/examples/short-mary-celeste/production/work/cap_12.png",
+  "start": 42.884,
+  "end": 47.448,
+  "text": "le mystère reste l'un des plus célèbres de l'histoire maritime."
+ },
+ {
+  "kind": "final",
+  "file": "/home/user/youtube-automation-agent/examples/short-mary-celeste/production/work/final.png",
+  "start": 47.32,
+  "end": 50.6,
+  "text": "TOI, TU AURAIS / QUITTÉ LE NAVIRE ?"
+ }
+]
