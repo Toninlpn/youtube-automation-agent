@@ -109,9 +109,11 @@ def build_scenes():
          os.path.join(TMP, "timeline.mp4")])
 
 
-VO_CHAIN = ("highpass=f=90,lowpass=f=11500,"
-            "acompressor=threshold=-20dB:ratio=2.5:attack=6:release=220:makeup=4,"
-            "equalizer=f=3200:t=q:w=1.2:g=2.5,aecho=0.7:0.5:23:0.10,volume={v}")
+VO_CHAIN = ("asetrate=44160,aresample=48000,atempo=1.087,"   # pitch -8 %, durée conservée
+            "highpass=f=70,lowpass=f=9500,"
+            "equalizer=f=105:t=q:w=1.0:g=5,equalizer=f=3400:t=q:w=1.4:g=-2.5,"
+            "acompressor=threshold=-22dB:ratio=3:attack=5:release=200:makeup=5,"
+            "aecho=0.7:0.5:29:0.14,volume={v}")
 WHISPER_CHAIN = ("asetrate=38400,aresample=48000,atempo=1.10,highpass=f=180,lowpass=f=1500,"
                  "tremolo=f=6.5:d=0.55,aecho=0.8:0.7:70|120:0.35|0.22,volume=0.14")
 
