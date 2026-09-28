@@ -109,12 +109,12 @@ def build_scenes():
          os.path.join(TMP, "timeline.mp4")])
 
 
-VO_CHAIN = ("asetrate=44160,aresample=48000,atempo=1.087,"   # pitch -8 %, durée conservée
+VO_CHAIN = ("aresample=48000,asetrate=43200,aresample=48000,atempo=1.06,"  # pitch -10 %, débit ~5 % plus lent
             "highpass=f=70,lowpass=f=9500,"
             "equalizer=f=105:t=q:w=1.0:g=5,equalizer=f=3400:t=q:w=1.4:g=-2.5,"
             "acompressor=threshold=-22dB:ratio=3:attack=5:release=200:makeup=5,"
             "aecho=0.7:0.5:29:0.14,volume={v}")
-WHISPER_CHAIN = ("asetrate=38400,aresample=48000,atempo=1.10,highpass=f=180,lowpass=f=1500,"
+WHISPER_CHAIN = ("aresample=48000,asetrate=38400,aresample=48000,atempo=1.10,highpass=f=180,lowpass=f=1500,"
                  "tremolo=f=6.5:d=0.55,aecho=0.8:0.7:70|120:0.35|0.22,volume=0.14")
 
 
@@ -133,7 +133,7 @@ def build_mix():
     for n in ("amb", "rumble", "heart", "breath", "glitch", "buzz"):
         parts.append(f"[{idx}:a]anull[a{n}]")
         idx += 1
-    vo_delays = {"vo1": 300, "vo2": 5300, "vo3": 10400, "vo4": 19300, "vo5": 21500}
+    vo_delays = {"vo1": 250, "vo2": 5300, "vo3": 10400, "vo4": 19000, "vo5": 21300}
     vo_vols = {"vo1": 1.0, "vo2": 1.0, "vo3": 0.95, "vo4": 0.90, "vo5": 0.95}
     labels = ["aamb", "arumble", "aheart", "abreath", "aglitch", "abuzz"]
     for n, d in vo_delays.items():

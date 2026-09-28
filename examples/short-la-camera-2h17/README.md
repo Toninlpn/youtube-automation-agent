@@ -37,9 +37,12 @@ Le twist tient en une phrase : **cette personne n'est jamais entrée.**
 ## Son
 
 - Voix off : timbre grave et inquiétant sélectionné par l'utilisateur en audition,
-  5 prises régénérées avec ce timbre, chaîne sombre : pitch −8 % (asetrate 44,1 kHz +
-  atempo 1,087), +5 dB à 105 Hz, −2,5 dB à 3,4 kHz, compression ratio 3, écho court.
-  Murmure final détimbré (pitch −3,5 demi-tons, tremolo, écho), limiteur −1,5 dBTP.
+  5 prises régénérées avec ce timbre, chaîne sombre : resample 48 kHz puis pitch −10 %
+  (asetrate 43,2 kHz + atempo 1,06 → débit ~5 % plus lent), +5 dB à 105 Hz, −2,5 dB à
+  3,4 kHz, compression ratio 3, écho court. Murmure final détimbré (resample 48 kHz,
+  pitch −20 %, tremolo, écho), limiteur −1,5 dBTP.
+  ⚠️ Piège connu : les prises TTS sortent en 24 kHz — tout asetrate doit être précédé
+  d'un aresample=48000, sinon la voix est accélérée et montante (chipmunk).
 - Nappes synthétisées en pur Python (`data/short-02/build_audio.py`, sans numpy) :
   vent + trafic lointain + hum 50 Hz, grondement infra-grave progressif,
   battement de cœur 58→74 BPM montant de 5 s à 26,5 s, respiration faint,
