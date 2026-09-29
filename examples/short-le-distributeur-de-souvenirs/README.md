@@ -19,6 +19,16 @@ TikTok / YouTube Short : thriller surnaturel moderne, tension dès la première 
 | `description.txt` | Description YouTube prête à coller |
 | `prompts.md` | Les prompts exacts + la recette de continuité personnage/décor |
 
+## ⬇️ Voir / télécharger
+
+| Ressource | Lien direct |
+|---|---|
+| Planche contact des 9 plans | [contact-sheet.jpg](https://raw.githubusercontent.com/Toninlpn/youtube-automation-agent/arena/01a0eca0-youtube-automation-agent/examples/short-le-distributeur-de-souvenirs/contact-sheet.jpg) |
+| Cover verticale 9:16 | [cover-1080x1920.jpg](https://raw.githubusercontent.com/Toninlpn/youtube-automation-agent/arena/01a0eca0-youtube-automation-agent/examples/short-le-distributeur-de-souvenirs/cover-1080x1920.jpg) |
+| Dossier des plans natifs | [images/](https://github.com/Toninlpn/youtube-automation-agent/tree/arena/01a0eca0-youtube-automation-agent/examples/short-le-distributeur-de-souvenirs/images) |
+| Dossier prêt à monter (1080 × 1920) | [exports-1080x1920/](https://github.com/Toninlpn/youtube-automation-agent/tree/arena/01a0eca0-youtube-automation-agent/examples/short-le-distributeur-de-souvenirs/exports-1080x1920) |
+| Prompts + méthode de continuité | [prompts.md](https://raw.githubusercontent.com/Toninlpn/youtube-automation-agent/arena/01a0eca0-youtube-automation-agent/examples/short-le-distributeur-de-souvenirs/prompts.md) |
+
 ## 🎬 Découpage (storyboard)
 
 | # | Plan | Image | Rôle narratif | Durée suggérée |
